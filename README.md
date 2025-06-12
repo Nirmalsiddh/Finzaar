@@ -12,9 +12,6 @@ A full-stack stock trading platform, built with **React**, **Node.js**, **Expres
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Setup Instructions](#setup-instructions)
-- [Screenshots](#screenshots)
-- [Contact](#contact)
-
 ---
 
 ## 📖 About
