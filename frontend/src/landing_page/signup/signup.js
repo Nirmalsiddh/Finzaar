@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -63,7 +64,7 @@ const Signup = () => {
         <h2>Signup Account</h2>
         <form onSubmit={handleSubmit}>
           <div className="cont">
-            <label htmlFor="email">Email</label><br/>
+            <label htmlFor="email">Email</label>
             <input
               type="email"
               name="email"
@@ -73,7 +74,7 @@ const Signup = () => {
             />
           </div>
           <div className="cont">
-            <label htmlFor="email">Username</label><br/>
+            <label htmlFor="username">Username</label>
             <input
               type="text"
               name="username"
@@ -83,7 +84,7 @@ const Signup = () => {
             />
           </div>
           <div className="cont">
-            <label htmlFor="password">Password</label><br/>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               name="password"
@@ -93,7 +94,6 @@ const Signup = () => {
             />
           </div>
           <button type="submit">Submit</button>
-          <br />
           <span>
             Already have an account? <Link to={"/login"}>Login</Link>
           </span>

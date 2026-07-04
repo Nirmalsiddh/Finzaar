@@ -246,6 +246,7 @@ app.post("/signup", async (req, res, next) => {
       .json({ message: "User signed in successfully", success: true, user });
   } catch (error) {
     console.error(error);
+    res.status(500).json({ message: "Something went wrong. Please try again.", success: false });
   }
 });
 
@@ -273,6 +274,7 @@ app.post("/login", async (req, res, next) => {
       .json({ message: "User logged in successfully", success: true });
   } catch (error) {
     console.error(error);
+    res.status(500).json({ message: "Something went wrong. Please try again.", success: false });
   }
 });
 

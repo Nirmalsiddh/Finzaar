@@ -52,47 +52,91 @@ code {
   border: none;
 }
 /* signup css and login css */
-.form_container{
+.form_container {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 75vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.form_container form {
+  background: #ffffff;
+  width: 100%;
+  max-width: 400px;
+  padding: 35px 32px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eee;
+  display: flex;
   flex-direction: column;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  box-sizing: border-box;
 }
-.form_container h2{
+
+.form_container h2 {
   color: rgb(44, 40, 40);
-  font-weight: 400;
-  padding: 20px;
+  font-weight: 500;
+  text-align: center;
+  margin: 0 0 15px 0;
 }
-.cont{
-  margin: 20px;
+
+.cont {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
 }
-.cont input{
-  border: 2px solid rgb(57, 51, 51);
-  border-radius: 5px;
-  height: 40px;
-  font-size: 20px;
-  padding: 0 10px 0 10px;
+
+.cont label {
+  padding: 0 0 6px 2px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
 }
-.cont label{
-  padding: 5px;
-  font-size: 20px;
-  font-weight: 200;
+
+.cont input {
+  border: 1.5px solid #d0d5dd;
+  border-radius: 8px;
+  height: 42px;
+  font-size: 16px;
+  padding: 0 12px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease-in-out;
 }
-.form_container button{
+
+.cont input:focus {
+  outline: none;
+  border-color: rgb(56, 126, 209);
+  box-shadow: 0 0 0 3px rgba(56, 126, 209, 0.15);
+}
+
+.form_container button {
   border: none;
-  width: 200px;
-  margin-left: 40px;
-  margin-bottom: 10px;
-  height: 35px;
-  font-size: 18px;
-  font-weight: 400;
-  border-radius: 10px;
+  width: 100%;
+  margin: 15px 0 12px 0;
+  height: 44px;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 8px;
+  background-color: rgb(56, 126, 209);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
 }
-.form_container button:hover{
-  background-color: rgb(108, 208, 245);
+
+.form_container button:hover {
+  background-color: rgb(40, 100, 175);
 }
-.form_container a{
+
+.form_container span {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+.form_container a {
   text-decoration: none;
+  color: rgb(56, 126, 209);
+  font-weight: 500;
 }

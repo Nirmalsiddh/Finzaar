@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
 import axios from "axios";
@@ -10,20 +10,23 @@ import "./ActionWindow.css";
 const SellActionWindow = ({ uid }) => {
   const [stockQuantity, setStockQuantity] = useState(1);
   const [stockPrice, setStockPrice] = useState(0.0);
+  const { closeSellWindow } = useContext(GeneralContext);
 
   const handleSellClick = () => {
+    
     axios.post("http://localhost:3002/newOrder", {
       name: uid,
       qty: stockQuantity,
       price: stockPrice,
       mode: "SELL",
-    });
+    })
+    .catch(err => console.error(err));
 
-    GeneralContext.closeSellWindow();
+    closeSellWindow();
   };
 
   const handleCancelClick = () => {
-    GeneralContext.closeSellWindow();
+    closeSellWindow();
   };
 
   return (

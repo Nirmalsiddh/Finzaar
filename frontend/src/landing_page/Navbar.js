@@ -36,17 +36,17 @@ function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" to="product">
+                <Link className="nav-link active" to="/product">
                   Product
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" to="pricing">
+                <Link className="nav-link active" to="/pricing">
                   Pricing
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" to="support">
+                <Link className="nav-link active" to="/support">
                   Support
                 </Link>
               </li>
