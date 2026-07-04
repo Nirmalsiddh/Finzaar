@@ -23,9 +23,15 @@ const app = express();
 
 // app.use(cors());
 app.use(
+  // cors({
+  //   origin: ["http://localhost:3000", "http://localhost:3001"],
+  //   credentials: true,
+  // })
   cors({
-    origin: ["http://localhost:3000", "http://localhost:3001"],
+    origin: ["https://finzaar.vercel.app", "https://finzaar-dashboard.vercel.app"],
     credentials: true,
+    secure: true,
+    sameSite: "none",
   })
 );
 app.use(bodyParser.json());
