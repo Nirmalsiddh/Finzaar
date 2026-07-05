@@ -22,16 +22,18 @@ const uri = process.env.MONGO_URL;
 const app = express();
 
 // app.use(cors());
-app.use(
-  // cors({
-  //   origin: ["http://localhost:3000", "http://localhost:3001"],
-  //   credentials: true,
-  // })
-  app.use(cors({
+// app.use(
+//   cors({
+//     origin: ["http://localhost:3000", "http://localhost:3001"],
+//     credentials: true,
+//   })
+  
+// );
+
+app.use(cors({
   origin: [process.env.CLIENT_URL, process.env.DASHBOARD_URL],
   credentials: true,
-  }))
-);
+  }));
 
 // app.use(bodyParser.json());
 app.use(express.json());
