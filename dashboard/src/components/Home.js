@@ -16,7 +16,7 @@ const Home = () => {
     const verifyCookie = async () => {
       if (!cookies.token) {
         // navigate("http://localhost:3000/");
-        window.location.href = "http://localhost:3000/";
+        window.location.href = process.env.REACT_APP_FRONTEND_URL + "/";
       }
       const { data } = await axios.post(
         `${process.env.REACT_APP_API_URL}/userverification`,

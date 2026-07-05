@@ -33,7 +33,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://finzaar.onrender.com/signup",
+        `${process.env.REACT_APP_API_URL}/Signup`,
         {
           ...inputValue,
         },
@@ -44,7 +44,7 @@ const Signup = () => {
         handleSuccess(message);
         setTimeout(() => {
           // window.location.href = "http://localhost:3001/";
-          window.location.href = "https://finzaar-dashboard.vercel.app";
+          window.location.href = process.env.REACT_APP_DASHBOARD_URL;
         }, 1000);
       } else {
         handleError(message);
