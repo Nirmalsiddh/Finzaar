@@ -19,19 +19,19 @@ const Home = () => {
         window.location.href = "http://localhost:3000/";
       }
       const { data } = await axios.post(
-        "http://localhost:3002/userverification",
+        `${process.env.REACT_APP_API_URL}/userverification`,
         {},
         { withCredentials: true }
       );
       const { status, user } = data;
       setUsername(user);
-      return status ? {} : (removeCookie("token"), window.location.href = "http://localhost:3000/login");
+      return status ? {} : (removeCookie("token"), window.location.href = process.env.REACT_APP_FRONTEND_URL + "/login");
     };
     verifyCookie();
   }, [cookies, navigate, removeCookie]);
   const Logout = () => {
     removeCookie("token");
-    window.location.href = "http://localhost:3000/signup";
+    window.location.href = process.env.REACT_APP_FRONTEND_URL + "/signup";
   };
   return (
     <>

@@ -12,13 +12,13 @@ const BuyActionWindow = ({ uid }) => {
   const { closeBuyWindow } = useContext(GeneralContext);
 
   const handleBuyClick = () => {
-    axios.post("http://localhost:3002/newOrder", {
+    axios.post(`${process.env.REACT_APP_API_URL}/newOrder`, {
       name: uid,
       qty: stockQuantity,
       price: stockPrice,
       mode: "BUY",
     })
-    .catch(err => console.error(err));;
+    .catch(err => console.error(err));
 
     closeBuyWindow();
   };

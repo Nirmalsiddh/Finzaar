@@ -27,13 +27,12 @@ app.use(
   //   origin: ["http://localhost:3000", "http://localhost:3001"],
   //   credentials: true,
   // })
-  cors({
-    origin: ["https://finzaar.vercel.app", "https://finzaar-dashboard.vercel.app"],
-    credentials: true,
-    secure: true,
-    sameSite: "none",
-  })
+  app.use(cors({
+  origin: [process.env.CLIENT_URL, process.env.DASHBOARD_URL],
+  credentials: true,
+  }))
 );
+
 app.use(bodyParser.json());
 app.use(cookieParser());
 
