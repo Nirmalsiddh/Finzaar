@@ -246,9 +246,8 @@ app.post("/signup", async (req, res, next) => {
     const user = await User.create({ email, password, username, createdAt });
     const token = createSecretToken(user._id);
     res.cookie("token", token, {
-      httpOnly: true,
-      secure: true,
-      sameSite: "none",
+      withCredentials: true,
+      httpOnly: false,
     });
     res
       .status(201)
@@ -275,9 +274,8 @@ app.post("/login", async (req, res, next) => {
     }
     const token = createSecretToken(user._id);
     res.cookie("token", token, {
-      httpOnly: true,
-      secure: true,
-      sameSite: "none",
+      withCredentials: true,
+      httpOnly: false,
     });
     res
       .status(201)
